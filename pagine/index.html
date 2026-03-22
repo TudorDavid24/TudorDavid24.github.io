@@ -3,17 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/pagine/StileIndex.css">
   <title>Il Mio Sito Web</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; }
-    nav a { display: block; margin: 10px 0; font-size: 1.1em; }
-  </style>
 </head>
 <body>
-  <h1>Benvenuto nel mio sito</h1>
-  <nav>
-    <a href="pagina1.html">Vai alla Pagina 1</a>
-    <a href="pagina2.html">Vai alla Pagina 2</a>
+    <h1>Benvenuto nel mio sito</h1>
+    <header class="hero">
+      <h1>David Tudor</h1>
+      <p class="hero-intro">
+          Sviluppatore senior in html, css e js wallah.
+      </p>
+      <a href="#progetti" class="btn">Guarda i miei progetti</a>
+  </header>
+
+    <nav id="nav-principale">
+      <ul>
+          <li><a href="#about" class="nav-link">Chi sono</a></li>
+          <li><a href="#competenze" class="nav-link">Competenze</a></li>
+          <li><a href="#progetti" class="nav-link">Progetti</a></li>
+          <li><a href="contatti.html" class="nav-link">Contatti</a></li>
+      </ul>
   </nav>
+  <section id="about" class="sezione">
+      <h2>Chi sono</h2>
+      <p>Sono il programmatore più senior di tutti</p>
+      <blockquote>
+          <p>Ehi, la tua bitch è forse open source? Perché lo sembra</p>
+          <footer>— Hammon</footer>
+      </blockquote>
+  </section>
+
+  <section id="competenze" class="sezione">
+    <h2>Competenze</h2>
+    <ul class="lista-competenze">
+        <li><strong>HTML</strong> — struttura semantica e accessibilità</li>
+        <li><strong>CSS</strong> — cascade, box model, selettori</li>
+        <li><strong>JavaScript</strong> — basi in corso di apprendimento</li>
+        <li><strong>Git</strong> — versionamento e GitHub</li>
+        <li><strong>VS Code</strong> — editor e estensioni</li>
+    </ul>
+</section>
+
+<section id="progetti" class="sezione">
+    <h2>Progetti</h2>
+    <div class="card">
+        <h3>Homepage del portfolio</h3>
+        <p>Struttura HTML semantica e stili CSS di base</p>
+        <a href="#" class="btn-small">Vedi dettagli</a>
+    </div>
+    <div class="card">
+        <h3>Sito Presentazione Mantova</h3>
+        <p>Sito che presenta la città di Mantova</p>
+        <a href= "/pagine/Mantova/indexMantova.html" class="btn-small">Vedi dettagli</a>
+    </div>
+    <div class="card">
+        <h3>Orario Scolastico</h3>
+        <p>Un orario scolastico realizzato tramite le table</p>
+        <a href="/pagine/OrarioScolastico/indexOrarioScolastico.html" class="btn-small">Vedi dettagli</a>
+    </div>
+    <div class="card">
+        <h3>Mondo Degli Animali</h3>
+        <p>Presentazione del mondo degli animali</p>
+        <a href="/pagine/MondoDegliAnimali/indexMondoAnimali.html" class="btn-small">Vedi dettagli</a>
+    </div>
+</section>
+
+<footer class="footer-principale">
+    <p>&copy; 2026 David Tudor — Portfolio in costruzione</p>
+    <ul>
+        <li><a href="https://github.com/TudorDavid24" class="footer-link">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/tudordavid24" class="footer-link">LinkedIn</a></li>
+    </ul>
+</footer>
+
+
 </body>
 </html>

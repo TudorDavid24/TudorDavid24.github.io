@@ -1,0 +1,33 @@
+.ListaOrdinataLink {
+    background-color: #90EE90;
+    color: #0A24F0;
+}
+.ListaOrdinataLink a{
+    color: red;
+}
+
+.TestoColoreBlu{
+    color: #0A24F0;
+    font-weight: 600;
+}
+
+.SecondaSezione{
+    color: #FF7BFF;
+    font-weight: 600;
+}
+
+.PalazzoDucale{
+    background-color: #87CEFA;
+}
+
+.PalazzoDucale a{
+    background-color: #FAFAD2;
+}
+
+figcaption{
+    background-color: #D3D3D3;
+}
+
+body{
+    padding-right: 50%;
+}

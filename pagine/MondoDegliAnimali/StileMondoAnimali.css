@@ -1,0 +1,63 @@
+body{
+    display: grid;
+    place-items: center; /* Centra in entrambe le direzioni */
+    min-height: 100vh;
+    margin: 0;
+    background-color: ghostwhite;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    background-color: #2C7A7C;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.galleria{
+    text-align: center;
+}
+
+.immagini img{  
+    border-radius: 10px;
+}
+
+.liste{
+    padding-top: 20px;
+}
+
+.liste h3{
+    text-align: center;
+}
+
+.liste ol{
+    display: grid;
+    justify-content: center;
+}
+
+.azioni{
+    text-align: center;
+}
+.azioni button{
+    background-color: #2C7A7C;
+    color: white;
+    border-radius: 5px;
+
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+.footer{
+    background-color:rgb(26, 28, 37);
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
