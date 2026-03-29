@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esempio di funzione JavaScript</title>
+    <script>
+        // Questa funzione verrà chiamata quando l'utente clicca il bottone
+        function cambiaTesto() {
+            document.getElementById("demo").innerHTML = "Hello JavaScript!";
+        }
+
+        // Funzione che accende la "lampadina"
+        function accendiLuce() {
+            document.getElementById("myImage").src = "pic_bulbon.gif";
+        }
+
+        // Funzione che spegne la "lampadina"
+        function spegniLuce() {
+            document.getElementById("myImage").src = "pic_bulboff.gif";
+        }
+        
+    </script>
+</head>
+
+<body>
+
+    <h2>What Can JavaScript Do?</h2>
+
+    <p id="demo">JavaScript can change HTML content.</p>
+
+    <button type="button" onclick="cambiaTesto()">Click Me!</button>
+
+</body>
+</html>

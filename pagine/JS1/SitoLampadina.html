@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esempio: cambiare l'immagine con JavaScript</title>
+    <script>
+
+        let bottone = document.getElementById("btn1");
+        bottone.addEventListener("click", saluta);
+        // Funzione che accende la "lampadina"
+        function accendiLuce() {
+            document.getElementById("myImage").src = "/pagine/JS1/images/LampadinaAccesa.jpg";
+        }
+
+        // Funzione che spegne la "lampadina"
+        function spegniLuce() {
+            document.getElementById("myImage").src = "/pagine/JS1/images/LampadinaSpenta.png";
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>What Can JavaScript Do?</h2>
+
+    <p>JavaScript can change HTML attribute values.</p>
+
+    <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+    <button type="button" onclick="accendiLuce()">Turn on the light</button>
+
+    <img id="myImage" src="/pagine/JS1/images/LampadinaAccesa.jpg" style="width:100px">
+
+    <button type="button" onclick="spegniLuce()">Turn off the light</button>
+
+</body>
+</html>
