@@ -11,6 +11,7 @@ body {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 1.5rem;
+
 }
 
 h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 1rem; }
@@ -42,6 +43,8 @@ a:focus-visible {
 #nav-principale {
     background-color: #1b1b1b;
     padding: 1rem 1.5rem;
+    orientation: landscape;
+    display: flex;
 }
 
 #nav-principale ul {
@@ -194,3 +197,41 @@ blockquote footer {
     vertical-align: middle;
     border-radius: 2px;
 }
+
+/* Sezione Progetti con Grid */
+#progetti {
+    display: grid;
+    /* Crea due colonne di uguale larghezza */
+    grid-template-columns: repeat(2, 1fr); 
+    /* Spazio tra le card */
+    gap: 20px; 
+    padding: 20px;
+}
+
+/* Titolo della sezione (deve occupare entrambe le colonne) */
+#progetti h2 {
+    grid-column: span 2;
+    text-align: center;
+}
+
+/* Responsive: su telefoni piccoli torna a una colonna sola */
+@media (max-width: 600px) {
+    #progetti {
+        grid-template-columns: 1fr;
+    }
+    
+    #progetti h2 {
+        grid-column: span 1;
+    }
+}
+
+/* Stile base per le card (opzionale, per migliorarne l'aspetto) */
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}   
