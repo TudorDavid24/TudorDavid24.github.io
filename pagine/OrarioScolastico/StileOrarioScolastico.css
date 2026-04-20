@@ -6,7 +6,7 @@ body{
 }
 
 .pagina{
-    background-color: cornsilk;
+    background-color: #78CDD7;
     padding: 50px;
     border-radius: 25px;    
     width: 75%;
@@ -64,9 +64,9 @@ a{
 }
 
 a:hover{
-    color: red;
+    color: black;
 }
 
 tbody tr:hover{
-    background-color: aquamarine;
+    background-color: #44A1A0;
 }
