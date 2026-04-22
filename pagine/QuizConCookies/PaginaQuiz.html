@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Con Cookies</title>
+    <link rel="stylesheet" href="/TudorDavid24.github.io/General.css">
+
+</head>
+<body>
+    <style>
+        h4{
+            font-weight: 400;
+        }
+        </style>
+    <h2>Dati anagrafici</h2>
+    <h4 style="display: inline;">Cognome:</h4> <input type="text" name="" id="cognome">
+    <h4 style="display: inline;">Nome:</h4> <input type="text" name="" id="nome">
+    <h2>Data di nascita</h2>
+    <h4 style="display: inline;">Giorno</h4> <input type="text" name="" id="giornoNascita">
+    <h4 style="display: inline;">Mese</h4>
+    <select name="mese" id="meseSelect">
+        <option value="GEN">GEN</option>
+        <option value="FEB">FEB</option>
+        <option value="MAR">MAR</option>
+        <option value="APR">APR</option>
+        <option value="MAG">MAG</option>
+        <option value="GIU">GIU</option>
+        <option value="LUG">LUG</option>
+        <option value="AGO">AGO</option>
+        <option value="SET">SET</option>
+        <option value="OTT">OTT</option>
+        <option value="NOV">NOV</option>
+        <option value="DIC">DIC</option>
+    </select>
+    <h4 style="display: inline;">Anno:</h4> <input type="text" name="" id="anno">
+
+    <h2>Domande:</h2>
+    <h3>Qual'è il linguaggio di programmazione utilizzato per creare e modificare i database? (in maiuscolo)</h3>
+    <input type="text" name="" id="rispostaPrimaDomanda">
+    <h3>Quanti valori può assumere una variabile booleana?</h3>
+    <select id="rispostaSecondaDomanda">
+        <option value="ONE">1</option>
+        <option value="TWO">2</option>
+        <option value="THREE">3</option>
+        <option value="FOUR">4</option>
+        <option value="FIVE">5</option>
+    </select>
+    <h3>Quali sono le librerie caricate a run-time</h3>
+    <input type="radio" name="sezioneRadio" id="rispostaStatica"> <h4 style="display: inline;">Statiche</h4>
+    <input type="radio" name="sezioneRadio" id="rispostaDinamica"> <h4 style="display: inline;">Dinamiche</h4>
+
+    <h3>Quali tra queste sono parole chiave in C++</h3>
+    <input type="checkbox" name="" id="void"> <h4 style="display: inline;">void</h4>
+    <input type="checkbox" name="" id="integer"> <h4 style="display: inline;">integer</h4>
+    <input type="checkbox" name="" id="char"> <h4 style="display: inline;">char</h4>
+    
+    <h3>8 bit corrispondono ad un...</h3>
+    <input type="text" name="" id="rispostaTerzaDomanda">
+    <br>
+    <br>
+    <button onclick="salvaDati()">Invia</button>
+    <script src="script.js"></script>
+</body>
+</html>
