@@ -1,0 +1,19 @@
+body { font-family: "Times New Roman", Times, serif; }
+
+table {
+    background: #78CDD7;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+table, th, td {
+    border: 1px solid #555;
+    color: black;
+}
+th, td {
+    padding: 2px 5px;
+    text-align: left;
+}
+input[type="number"] { width: 50px; }
+input[type="text"] { width: 200px; }
+.totale-label { text-align: right; background-color: #eee; }
+.btn-totale { width: 100%; cursor: pointer; }

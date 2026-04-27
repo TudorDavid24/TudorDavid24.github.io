@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio con tabelle e JS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href= "/General.css">
+</head>
+<body>
+    <h1>Ordine prodotti</h1>
+    <table>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Q.ta</th>
+                        <th>Descrizione</th>
+                        <th>Costo Unitario</th>
+                        <th>Totale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="number" id="qta1" value="0"></td>
+                        <td>mouse</td>
+                        <td>16€</td>
+                        <td><input type="text" id="tot1" value="0" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" id="qta2" value="0"></td>
+                        <td>tastiera</td>
+                        <td>25€</td>
+                        <td><input type="text" id="tot2" value="0" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" id="qta3" value="0"></td>
+                        <td>stampante</td>
+                        <td>350€</td>
+                        <td><input type="text" id="tot3" value="0" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" id="qta4" value="0"></td>
+                        <td>scanner</td>
+                        <td>200€</td>
+                        <td><input type="text" id="tot4" value="0" readonly></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="totale-label">
+                            <button class="btn-totale" onclick="calcolaTotale()">TOTALE ORDINE --></button>
+                        </td>
+                        <td><input type="text" id="totaleFinale" value="0" readonly></td>
+                    </tr>
+                </tfoot>
+            </table>
+        
+            <div>
+                Desidero ricevere notifiche 
+                <input type="radio" name="notifiche" id="si" checked> <label for="si">si</label>
+                <input type="radio" name="notifiche" id="no"> <label for="no">no</label>
+            </div>
+        
+            <div style="margin-top: 5px;">
+                E-mail: <input type="email" id="email" style="width: 200px;">
+            </div>
+        
+            <div style="margin-top: 5px;">
+                Pagamento: 
+                <select id="pagamento">
+                    <option value="contanti">contanti</option>
+                    <option value="carta">carta di credito</option>
+                    <option value="bonifico">bonifico</option>
+                </select>
+            </div>
+        
+            <div style="margin-top: 15px;">
+                <button type="button" onclick="inviaOrdine()">INVIA ORDINE</button>
+            </div>
+        </div>
+        
+    
+    <script src="script.js"></script>
+</body>
+</html>
