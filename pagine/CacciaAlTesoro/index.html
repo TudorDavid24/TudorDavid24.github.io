@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Caccia al Tesoro</title>
+  <link rel="stylesheet" href="stile.css">
+  <link rel="stylesheet" href="General.css">
+</head>
+<body>
+   <h1 id="titolo-gioco">Caccia al Tesoro</h1>
+  <div id="pannello-stato">
+    <p>Giocatore: <span id="nome-giocatore"></span></p>
+    <p>Punteggio: <span id="punteggio">0</span> pt</p>
+    <p>Indizi rimanenti: <span id="contatore"></span></p>
+  </div>
+  <div id="area-indizio">
+    <p id="testo-indizio">In attesa di un indizio...</p>
+    <button id="btn-sono-qui">Sono qui!</button>
+  </div>
+  <!-- Collegamento al file JS: SEMPRE in fondo al body -->
+  <script src="gioco.js"></script>
+</body>
+</html>

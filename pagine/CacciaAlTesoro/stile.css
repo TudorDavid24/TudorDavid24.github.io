@@ -1,0 +1,140 @@
+/* =========================================
+   VARIABILI DI TEMA 
+   Sostituisci questi colori con quelli di
+   tudordavid24.github.io
+========================================= */
+:root {
+  --sfondo-principale: #0D5C63;   /* Colore di sfondo della pagina */
+  --sfondo-card: #247B7B;         /* Colore dei riquadri/pannelli */
+  --testo-principale: #fff;    /* Colore dei titoli e dei valori */
+  --testo-secondario: #fff;    /* Colore delle etichette (es. "Giocatore:") */
+  --colore-accento: #44A1A0;      /* Colore principale del tuo sito (es. pulsanti) */
+  --colore-accento-hover: #44A1A0;/* Colore del pulsante al passaggio del mouse */
+  --colore-successo: #28a745;     /* Colore per quando il giocatore è "vicino" */
+}
+
+/* =========================================
+   RESET E STILI BASE
+========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--sfondo-principale);
+  color: var(--testo-principale);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  line-height: 1.6;
+}
+
+#titolo-gioco {
+  margin-bottom: 2rem;
+  color: var(--colore-accento);
+  text-align: center;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   PANNELLI E LAYOUT
+========================================= */
+#pannello-stato, #area-indizio {
+  background-color: var(--sfondo-card);
+  width: 100%;
+  max-width: 450px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.5rem;
+}
+
+#pannello-stato p {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.8rem 0;
+  color: var(--testo-secondario);
+  font-size: 1.1rem;
+}
+
+#pannello-stato p:last-child {
+  border-bottom: none;
+}
+
+#pannello-stato span {
+  font-weight: 600;
+  color: var(--testo-principale);
+}
+
+/* =========================================
+   AREA INDIZI E FEEDBACK
+========================================= */
+#area-indizio {
+  text-align: center;
+}
+
+#testo-indizio {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Classe aggiunta dal JS quando la distanza è minore del raggio */
+.vicino {
+  color: var(--colore-successo) !important;
+  font-weight: 700;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* =========================================
+   PULSANTI
+========================================= */
+#btn-sono-qui {
+  background-color: var(--colore-accento);
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#btn-sono-qui:hover:not(:disabled) {
+  background-color: var(--colore-accento-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#btn-sono-qui:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+#btn-sono-qui:disabled {
+  background-color: #444444;
+  color: #888888;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
