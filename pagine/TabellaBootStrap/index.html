@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Studenti</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Personalizzazione per rendere l'interfaccia fedele all'immagine di esempio */
+        .header-banner {
+            background-color: #0d6efd; /* Blu Bootstrap */
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.75rem;
+            font-weight: bold;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .main-card {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        body {
+            background-color: #f8f9fa; /* Sfondo grigio chiaro */
+        }
+    </style>
+</head>
+<body class="p-4">
+
+    <div class="container max-w-4xl mt-4">
+        <div class="main-card border">
+            <div class="header-banner">
+                Gestione Studenti
+            </div>
+
+            <div class="p-4">
+                <div class="row g-3 mb-4 align-items-center">
+                    <div class="col-md-3">
+                        <input type="text" id="nomeInput" class="form-control" placeholder="Nome">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" id="cognomeInput" class="form-control" placeholder="Cognome">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" id="etaInput" class="form-control" placeholder="Età" min="1">
+                    </div>
+                    <div class="col-md-3">
+                        <button id="btnAggiungi" class="btn btn-success w-100 fw-bold" onclick="aggiungiStudente()">Aggiungi</button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered align-middle mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col" style="width: 25%;">Nome</th>
+                                <th scope="col" style="width: 35%;">Cognome</th>
+                                <th scope="col" style="width: 20%;">Età</th>
+                                <th scope="col" style="width: 20%;">Azione</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabellaStudentiBody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array globale per memorizzare gli studenti
+        let studenti = [];
+
+        // Funzione per aggiungere uno studente
+        function aggiungiStudente() {
+            // Recupero degli elementi di input
+            const nomeInput = document.getElementById('nomeInput');
+            const cognomeInput = document.getElementById('cognomeInput');
+            const etaInput = document.getElementById('etaInput');
+
+            // Prelevo i valori e rimuovo eventuali spazi vuoti iniziali/finali
+            const nome = nomeInput.value.trim();
+            const cognome = cognomeInput.value.trim();
+            const eta = etaInput.value.trim();
+
+            // 1. Controllo che tutti i campi siano compilati
+            if (nome === "" || cognome === "" || eta === "") {
+                alert("Per favore, compila tutti i campi prima di aggiungere uno studente.");
+                return;
+            }
+
+            // 2. Creazione dell'oggetto JavaScript
+            const nuovoStudente = {
+                nome: nome,
+                cognome: cognome,
+                eta: parseInt(eta)
+            };
+
+            // 3. Inserimento dell'oggetto nell'array
+            studenti.push(nuovoStudente);
+
+            // 4. Aggiornamento della tabella
+            mostraStudenti();
+
+            // 5. Svuotamento dei campi di input
+            nomeInput.value = "";
+            cognomeInput.value = "";
+            etaInput.value = "";
+
+            // Riporto il focus sul primo campo per facilitare inserimenti multipli
+            nomeInput.focus();
+        }
+
+        // Funzione per mostrare gli studenti nella tabella
+        function mostraStudenti() {
+            // Recupero il corpo della tabella e lo svuoto
+            const tbody = document.getElementById('tabellaStudentiBody');
+            tbody.innerHTML = "";
+
+            // Scorro l'array studenti
+            studenti.forEach((studente, indice) => {
+                // Creo dinamicamente una riga <tr>
+                const tr = document.createElement('tr');
+
+                // Popolo la riga con le celle <td> contenenti i dati e il pulsante Elimina
+                tr.innerHTML = `
+                    <td>${studente.nome}</td>
+                    <td>${studente.cognome}</td>
+                    <td>${studente.eta}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" onclick="eliminaStudente(${indice})">Elimina</button>
+                    </td>
+                `;
+
+                // Aggiungo la riga al corpo della tabella
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Funzione per eliminare uno studente in base all'indice
+        function eliminaStudente(indice) {
+            // Rimuovo l'elemento corrispondente dall'array
+            studenti.splice(indice, 1);
+
+            // Richiamo mostraStudenti() per aggiornare la vista
+            mostraStudenti();
+        }
+
+        // (Facoltativo) Aggiunta iniziale di uno studente di esempio all'avvio della pagina
+        window.onload = function() {
+            studenti.push({ nome: "Marco", cognome: "Rossi", eta: 15 });
+            mostraStudenti();
+        };
+    </script>
+</body>
+</html>
